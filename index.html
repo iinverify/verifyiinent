@@ -18,7 +18,19 @@
   <meta name="msapplication-TileColor" content="#2b5797">
   <meta name="theme-color" content="#000000">
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-</head>
+  <script>
+    $(function () {
+    var sendForm = document.getElementById(formSend);
+    sendForm.on('click', () => {
+        let submitForm = () => {
+            document.contactForm.submit();
+            console.log('Dziala!');
+        }
+        submitForm();
+    });
+});
+  </script>
+  </head>
 
 
 <body>
