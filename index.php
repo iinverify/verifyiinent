@@ -17,27 +17,20 @@ if ($_POST["g-recaptcha-response"]) {
         $_POST["g-recaptcha-response"]
         );
     }
-
+    
 if ($response != null && $response->success) {
-    if (isset($_REQUEST['nick_uzytkownika', 'email'])) {
-    
-    $admin_email = "noreply@ycsv.pl";
-    $email = $_REQUEST['email'];
-    $subject = "Weryfikacja nowego użytkownika IINEntertainment";
-    $nazwa_uzytkownika = $_REQUEST['nazwa'];
-    
-    mail($admin_email, "$subject", "$nazwa_uzytkownika", "From:" . $email);
-    
-    echo "Test";
+    $to= ‘p.bonecki@icloud.com';
+    $to2= 'weryfikacje@ycsv.pl';
+    $name = $_POST['name'];
+    $subject = ‘Weryfikacja uzytkownika' . $name ';
+
+    mail($to2, $subject);
+
+    if(mail($to, $subject)) {
+        echo ‘<h1>Formularz wysłany</h1>‘;
+    } else {
+        echo ‘<h1>Błąd Serwera</h1>';
     }
-    else {
-    ?>
-    
-    <form method="post">
-    Twój adres e-mail <input name="email" type="text" /><br />
-    Twoja nazwa użytkownika Discord <input name="nazwa" type="text" />
-    <input type="submit" value="Zweryfikuj" />
-    
-<?php
-}
+    } else {
+    echo ‘reCaptcha nie dziala…’;}
 ?>
