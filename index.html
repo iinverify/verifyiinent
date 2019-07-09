@@ -31,12 +31,12 @@
   <br>
   <center>Aby zweryfikować swoje dane<br> wypełnij poniższe pola, zaznacz że nie jesteś robotem<br> a następnie kliknij w przycisk weryfikuj.</center>
   <br><br><br><br><br><br><br>
-  <center><form src=index.php><div>
-    <input name="nick_uzytkownika">Nazwa użytkownika Discorda<br>
-    </div>
+  <center>
+    <form id="contactForm" name="contactForm" method="post" action="index.php">
+    <input type="text" name="name" id="inputName" placeholder="Nazwa użytkownika discord"></input>
+    <div class="capt_style">
       <div class="g-recaptcha" data-theme="dark" data-sitekey="6LciZKsUAAAAAPsFWxICTo9wWvH6m4dFMn-EXrQw"></div>
-      <br/>
-      <input type="submit" value="Weryfikuj" href="https://weryfikacja.ycsv.pl/success">
+    </div>
     </form>
   </center>
 </body>
